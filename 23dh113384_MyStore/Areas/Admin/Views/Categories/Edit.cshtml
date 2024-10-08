@@ -1,0 +1,26 @@
+﻿@model _23dh113384_MyStore.Models.Category
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="bg-success">Cập nhật danh mục</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal form-">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.CategoryID)
+
+    @* Nhung Partal View vao form cha *@
+    @Html.Partial("PVCreateEditCategory", Model)
+</div>
+}
+
+
+
