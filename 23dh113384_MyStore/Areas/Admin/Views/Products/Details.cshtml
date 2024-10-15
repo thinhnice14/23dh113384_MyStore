@@ -5,55 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+<h2 class="bg-success">CHI TIẾT SẢN PHẨM</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
+@Html.Partial("PVProdInfo", Model)
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProducPrice)
-        </dt>
+<div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+        @Html.ActionLink("Sửa ", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Quay lại danh mục ", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProducPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Productmage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Productmage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
